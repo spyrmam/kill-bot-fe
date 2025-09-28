@@ -75,7 +75,7 @@ end]==],Player.Character)
 Mouse,mouse,UserInputService,ContextActionService = m,m,UIS,CAS
 end
 
-local character1 = owner.Character
+local character1 = owner
 local fakebody = Instance.new("Part", character1)
 fakebody.Transparency = 1
 fakebody.Anchored = true
