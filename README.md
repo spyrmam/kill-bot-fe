@@ -90,7 +90,7 @@ wait(1/60)
 --// Initializing \\--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
 local Plrs = S.owner
-local Plr = Plrs.owner
+local Plr = owner
 local Char = Plr.Character
 local Hum = Char:FindFirstChildOfClass'Humanoid'
 local RArm = Char["Right Arm"]
