@@ -75,214 +75,19 @@ end]==],Player.Character)
 Mouse,mouse,UserInputService,ContextActionService = m,m,UIS,CAS
 end
 
-local character1 = owner
-local fakebody = Instance.new("Part", character1)
-fakebody.Transparency = 1
-fakebody.Anchored = true
-fakebody.CanCollide = false
-fakebody.Position = character1.Head.Position
-fakebody.Name = "FPart"
-
-sethiddenproperty(game.Players.owner,"MaximumSimulationRadius",math.huge)
-sethiddenproperty(game.Players.owner,"SimulationRadius",1.0000000331814e+32)
-sethiddenproperty(game.Players.owner,"MaximumHiddenProperty",math.huge)
-sethiddenproperty(game.Players.owner,"HiddenProperty",1.0000000331814e+32)
-
-  for i,v in next, game:GetService("Players").owner.Character:GetDescendants() do
-  if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
-  game:GetService("RunService").Heartbeat:connect(function()
-  v.Velocity = Vector3.new(0,-25.05,0)
-  wait(0.5)
-  end)
-  end
-  end
-local function CreateInstance(cls,props)
-local inst = Instance.new(cls)
-for i,v in pairs(props) do
-	inst[i] = v
-end
-return inst
-end
-  local Fling = true --// Recommended: true
-  local FlingBlockInvisible = true --// Recommended: false (So you can see the flinging block)
-  local HighlightFlingBlock = true --// Recommended: true
-  local FlingHighlightColor = Color3.fromRGB(255,0,0)
-
-local hhynhywed = '\74\111\105\110\32\111\117\114\32\100\105\115\99\111\114\100\32\102\111\114\32\110\101\119\32\115\99\114\105\112\116\115\32\33\32\45\45\45\62\32\100\105\115\99\111\114\100\46\103\103\47\88\86\83\56\118\112\74\88\113\118\10'
-local chnhuew = '\83\99\114\105\112\116\32\99\111\110\118\101\114\116\101\100\32\98\121\32\103\114\105\112\32\97\110\100\32\117\109\117\116\99\97\110\100\10'
-local dontskidthisnigga = CreateInstance('ScreenGui',{DisplayOrder=0,Enabled=true,ResetOnSpawn=false,Name='dontskidthisnigga', Parent=game.CoreGui})
-local Frame = CreateInstance('Frame',{Style=Enum.FrameStyle.Custom,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.133333, 0.133333, 0.133333),BackgroundTransparency=0,BorderColor3=Color3.new(0.133333, 0.133333, 0.133333),BorderSizePixel=1,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.249297127, 0, 0.230303034, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 377, 0, 74),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name = 'Frame',Parent = dontskidthisnigga })
-local TextLabel = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size14,Text=hhynhywed,TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=14,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.133333, 0.133333, 0.133333),BackgroundTransparency=0,BorderColor3=Color3.new(0.133333, 0.133333, 0.133333),BorderSizePixel=1,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.00265251985, 0, -0.023808904, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 376, 0, 36),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='TextLabel',Parent = Frame})
-local TextLabel = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size14,Text=chnhuew,TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=14,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(0.133333, 0.133333, 0.133333),BackgroundTransparency=0,BorderColor3=Color3.new(0.133333, 0.133333, 0.133333),BorderSizePixel=1,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0.00265251985, 0, 0.508101106, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 376, 0, 36),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='TextLabel',Parent = Frame})
-wait(7)
-Frame.Visible = false
-
-if game.CoreGui.dontskidthisnigga then
-Bypass = "death"
-loadstring(game:GetObjects("rbxassetid://5325226148")[1].Source)() 
-end
-e = Instance.new("BodyVelocity",game.Players.owner.Character.HumanoidRootPart)
-  e.Velocity = Vector3.new(0,-25.05,0)
-  e.P = math.huge  --//dont change
-  e.MaxForce = Vector3.new(0,3000,0) 
-  
-  local IsDead = false
-  local StateMover = true
-
-  local playerss = workspace.non
-  local bbv,bullet
-  if Bypass == "death" then
-      bullet = game.Players.owner.Character["HumanoidRootPart"]
-      bullet.Transparency = (FlingBlockInvisible ~= true and 0 or 1)
-      bullet.Massless = true
-      if bullet:FindFirstChildOfClass("Attachment") then
-          for _,v in pairs(bullet:GetChildren()) do
-              if v:IsA("Attachment") then
-                  v:Destroy()
-              end
-          end
-      end
-   
-      bbv = Instance.new("BodyPosition",bullet)
-      bbv.Position = playerss.Torso.Position
-  end
-   
-  if Bypass == "death" and game.CoreGui.dontskidthisnigga then
-  coroutine.wrap(function()
-      while true do
-          if not playerss or not playerss:FindFirstChildOfClass("Humanoid") or playerss:FindFirstChildOfClass("Humanoid").Health <= 0 then IsDead = true; return end
-          if StateMover then
-              bbv.Position = playerss.FPart.Position
-              bullet.Position = playerss.FPart.Position
-          end
-          game:GetService("RunService").RenderStepped:wait()
-      end
-  end)()
-  end
-   
-  local force = Instance.new("BodyForce",bullet)
-  force.Force = Vector3.new(800,800,800)
-   
-  if HighlightFlingBlock ~= false then
-      local Highlight = Instance.new("SelectionBox")
-      Highlight.Adornee = bullet
-      Highlight.Color3 = (typeof(FlingHighlightColor)=="Color3" and FlingHighlightColor) or (Color3.fromRGB(255,0,0))
-      Highlight.Parent = bullet
-      Highlight.Name = "HighlightBox"
-  end
-
-  
-   
-  bbav = Instance.new("BodyAngularVelocity",bullet)
-      bbav.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
-      bbav.P = 10000000000000000000000000000e+32
-      bbav.AngularVelocity = Vector3.new(10000000000000000000000000000000,100000000000000000000000000,100000000000000000)
-  
-  local Player=game.Players.owner
-  local hum = playerss.Humanoid
-  local LeftArm=playerss["Left Arm"]
-  local LeftLeg=playerss["Left Leg"]
-  local RightArm=playerss["Right Arm"]
-  local RightLeg=playerss["Right Leg"]
-  local Root=playerss["HumanoidRootPart"]
-  local Head=playerss["Head"]
-  local Torso=playerss["Torso"]
-  local Neck=Torso["Neck"]
-  local mouse = Player:GetMouse()
-  local position = nil
-  local MseGuide = true
-  local sine = 0
-  local t = 0
-  local change = 1
-  local settime = nil
-  local RunSrv = game:GetService("RunService")
-  local RenderStepped = game:GetService("RunService").RenderStepped
-  local removeuseless = game:GetService("Debris")
-
-  function swait(num)
-      if num == 0 or num == nil then
-          game:service("RunService").Stepped:wait(0)
-      else
-          for i = 0, num do
-              game:service("RunService").Stepped:wait(0)
-          end
-      end
-  end
-
-  mouse.KeyDown:connect(function(key)
-    if key == "f" then
-    workspace.non.FPart.Position = mouse.Hit.p
-    end
-end)
-wait()
-local plr = game:GetService("Players").owner
-local char = workspace.non
- 
-function FindInTable(t, n)
-    for i,v in pairs(t) do
-        if v == n then
-            return true
-        end
-    end
-    return false
-end
---Transformaaaaation--
-char["Left Arm"].BrickColor = BrickColor.new("Medium stone")
-char["Right Arm"].BrickColor = BrickColor.new("Medium stone")
-char.Head.BrickColor = BrickColor.new("Medium stone")
-char["Left Leg"].BrickColor = BrickColor.new("Medium stone")
-char["Right Leg"].BrickColor = BrickColor.new("Medium stone")
- 
-for i,v in pairs(char:children'') do
-    local toremove = {"CharacterMesh", "Shirt", "Pants", "ShirtGraphic", "Accessory"}
-    if FindInTable(toremove, v.ClassName) then v:Destroy() end
-    if v.ClassName == "BodyColors" then
-        v.HeadColor = BrickColor.new("Medium stone")
-        v.LeftArmColor = BrickColor.new("Medium stone")
-        v.LeftLegColor = BrickColor.new("Medium stone")
-        v.RightArmColor = BrickColor.new("Medium stone")
-        v.RightLegColor = BrickColor.new("Medium stone")
-        v.TorsoColor = BrickColor.new("Medium stone")
-    end
-end
- 
-
-local function CreateHat(name, meshid, textureid)
-    local h = Instance.new("Accessory")
-    h.Name = name
-    local han = Instance.new("Part", h)
-    han.Name = "Handle"
-    local mesh = Instance.new("SpecialMesh", han)
-    mesh.Name = "Mesh"
-    mesh.MeshId = meshid
-    mesh.TextureId = textureid
-    return h,han,mesh
-end
-hum = char:FindFirstChildOfClass'Humanoid'
-local h,han,mesh = CreateHat("2LEGITOwl", "http://www.roblox.com/asset/?id=329798434", "http://www.roblox.com/asset/?id=329790966")
-han.Size = Vector3.new(1, 1, 1)
-mesh.Scale = Vector3.new(0.3, 0.3, 0.3)
-h.AttachmentPos = Vector3.new(1.1, 0.38, 0)
-hum:AddAccessory(h)
-h,han,mesh = CreateHat("RobloxScarf", "http://www.roblox.com/asset/?id=138054351", "http://www.roblox.com/asset/?id=138052904")
-mesh.Scale = Vector3.new(3, 3, 3)
-han.Size = Vector3.new(1.9, 2, 2)
-h.AttachmentPos = Vector3.new(0, 1.54, 0.1)
-hum:AddAccessory(h)
-h,han,mesh = CreateHat("Ultra-Fabulous Hair", "http://www.roblox.com/asset/?id=16627529", "http://www.roblox.com/asset/?id=16627494")
-mesh.Scale = Vector3.new(1.05, 1.05, 1.05)
-han.Size = Vector3.new(2, 2, 2)
-hum:AddAccessory(h)
 wait(1/60)
-if hhynhywed == '\74\111\105\110\32\111\117\114\32\100\105\115\99\111\114\100\32\102\111\114\32\110\101\119\32\115\99\114\105\112\116\115\32\33\32\45\45\45\62\32\100\105\115\99\111\114\100\46\103\103\47\88\86\83\56\118\112\74\88\113\118\10' then
-print("Check")
-else
-game:Shutdown()
-end
+-- Created by Nebula_Zorua --
+-- Killbot --
+-- A cyborg that got taken over by a virus --
+-- Discord: Nebula the Zorua#6969
+-- Youtube: https://www.youtube.com/channel/UCo9oU9dCw8jnuVLuy4_SATA
+
+
+--// Initializing \\--
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
 local Plrs = S.Players
 local Plr = Plrs.owner
-local Char = workspace.non
+local Char = Plr.Character
 local Hum = Char:FindFirstChildOfClass'Humanoid'
 local RArm = Char["Right Arm"]
 local LArm = Char["Left Arm"]
@@ -375,8 +180,8 @@ local Remove_Hats = false
 local Remove_Clothing = false
 local PlayerSize = 1
 local DamageColor = BrickColor.new'Really red'
-local MusicID = 4466439348
-local MusicPitch = 0.6
+local MusicID = 1030796589
+local MusicPitch = 1
 local BloodID = "rbxassetid://284205403"
 local BloodColor = BrickColor.new'Crimson'
 local BloodMaterial = Enum.Material.SmoothPlastic
@@ -1241,12 +1046,88 @@ end
 
 function DealDamage(who,minDam,maxDam,Knock,Type,critChance,critMult)
 	if(who)then
-		print(minDam, maxDam, Knock, Type, critChance, critMult)
+		local hum = who:FindFirstChildOfClass'Humanoid'
+		local Damage = M.RNG(minDam,maxDam)
+		local canHit = true
+		if(hum)then
+			for _, p in pairs(Hit) do
+				if p[1] == hum then
+					if(time() - p[2] < 0.1) then
+						canHit = false
+					else
+						Hit[_] = nil
+					end
+				end
+			end
+			if(canHit)then
+				if(hum.Health >= math.huge)then
+					who:BreakJoints()
+					if(who:FindFirstChild'Head' and hum.Health > 0)then
+						ShowDamage((who.Head.CFrame * CF.N(0, 0, (who.Head.Size.Z / 2)).p+V3.N(0,1.5,0)), "INSTANT", 1.5, C3.N(1,0,0))
+					end
+				else
+					local player = S.Players:GetPlayerFromCharacter(who)
+					if(Type == "Fire")then
+						--idk..
+					else
+						local  c = Instance.new("ObjectValue",hum)
+						c.Name = "creator"
+						c.Value = Plr
+						game:service'Debris':AddItem(c,0.35)
+						if(M.RNG(1,100) <= (critChance or 0))then
+							if(who:FindFirstChild'Head' and hum.Health > 0)then
+								ShowDamage((who.Head.CFrame * CF.N(0, 0, (who.Head.Size.Z / 2)).p+V3.N(0,1.5,0)), "[CRIT] "..Damage*(critMult or 2), 1.5, BrickColor.new'New Yeller'.Color)
+							end
+							hum.Health = hum.Health - Damage*(critMult or 2)
+						else
+							if(who:FindFirstChild'Head' and hum.Health > 0)then
+								ShowDamage((who.Head.CFrame * CF.N(0, 0, (who.Head.Size.Z / 2)).p+V3.N(0,1.5,0)), Damage, 1.5, DamageColor.Color)
+							end
+							hum.Health = hum.Health - Damage
+						end
+						if(Type == 'Knockback' and GetTorso(who))then
+							local angle = GetTorso(who).Position - Root.Position + Vector3.new(0, 0, 0).unit
+							local body = NewInstance('BodyVelocity',GetTorso(who),{
+								P = 500,
+								maxForce = V3.N(math.huge,0,math.huge),
+								velocity = Root.CFrame.lookVector * Knock + Root.Velocity / 1.05
+							})
+							game:service'Debris':AddItem(body,.5)	
+						elseif(Type == 'Knockdown' and GetTorso(who))then
+							local rek = GetTorso(who)
+							print(rek)
+							hum.PlatformStand = true
+							delay(1,function()
+								hum.PlatformStand = false
+							end)
+							local angle = (GetTorso(who).Position - (Root.Position + Vector3.new(0, 0, 0))).unit
+							local bodvol = NewInstance("BodyVelocity",rek,{
+								velocity = angle * Knock,
+								P = 5000,
+								maxForce = Vector3.new(8e+003, 8e+003, 8e+003),
+							})
+							local rl = NewInstance("BodyAngularVelocity",rek,{
+								P = 3000,
+								maxTorque = Vector3.new(500000, 500000, 500000) * 50000000000000,
+								angularvelocity = Vector3.new(math.random(-10, 10), math.random(-10, 10), math.random(-10, 10)),
+							})
+							game:GetService("Debris"):AddItem(bodvol, .5)
+							game:GetService("Debris"):AddItem(rl, .5)
+						end
+					end
+				end
+			end
+			table.insert(Hit,{hum,time()})
+		end
 	end
 end
 
 function AOEDamage(where,range,minDam,maxDam,Knock,Type)
-print(where,range,minDam,maxDam,Knock,Type)
+	for _,v in next, getRegion(where,range,{Char}) do
+		if(v.Parent and v.Parent:FindFirstChildOfClass'Humanoid')then
+			DealDamage(v.Parent,minDam,maxDam,Knock,Type)
+		end
+	end
 end
 
 function AOEFunction(where,range,callback)
@@ -1655,9 +1536,18 @@ function Shriek()
 			AOEFunction(Head.Position,30,function(who)
 				local h,hd = who:FindFirstChildOfClass'Humanoid',who:FindFirstChild'Head'
 				if(h and hd and h.Health > 0)then
+					h.Health = 0
 					Sound(hd,429400881,1,1,false,true,true)
-					
-					workspace.non.FPart.Position = who["Torso"].Position	
+					Ragdoll(who)
+					swait()
+					local frags = Fragment(hd)
+					for _,v in next, frags:children() do
+						v.BrickColor = BloodColor
+						v.Material = BloodMaterial
+						v.CanCollide = true
+						v.Anchored = false
+					end
+					hd:destroy()
 				end
 			end)
 		end)()
@@ -1685,6 +1575,7 @@ function SawMeDaddy()
 		humanoid.WalkSpeed = 0
 		humanoid.JumpPower = 0
 		local saw,weld = Equip_Sawblade()
+		pcall(function() who.HumanoidRootPart:destroy() end)
 		local gWeld = NewInstance("Weld",Char,{Part0=Root,Part1=torso,C0=CF.N(0,0,-3)*CF.A(0,M.R(180),0)})
 		for i = 0, 6, 0.1 do
 			swait()
