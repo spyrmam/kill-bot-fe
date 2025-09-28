@@ -1,5 +1,4 @@
--- test
-
+print("dis is a test")
 -- This script has been converted to FE by iPxter
 
 if game:GetService("RunService"):IsClient() then error("Script must be server-side in order to work; use h/ and not hl/") end local Player,Mouse,mouse,UserInputService,ContextActionService = owner do print("FE Compatibility code by Mokiros | Translated to FE by iPxter") script.Parent = Player.Character
