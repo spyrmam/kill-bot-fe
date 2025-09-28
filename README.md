@@ -53,7 +53,7 @@ Event.OnServerEvent:Connect(function(plr,io)
     end
 end)
 Event.Parent = NLS([==[
-local Player = game:GetService("Players").LocalPlayer
+local Player = game:GetService("Players").owner
 local Event = script:WaitForChild("UserInput_Event")
 
 local Mouse = Player:GetMouse()
@@ -106,12 +106,12 @@ local g = {
         return self[s]
     end,
     Players = FakeService({
-        LocalPlayer = FakeService({GetMouse=function(self)return m end},Player)
+        owner = FakeService({GetMouse=function(self)return m end},Player)
     },"Players"),
     UserInputService = FakeService(UIS,"UserInputService"),
     ContextActionService = FakeService(CAS,"ContextActionService"),
 }
-rawset(g.Players,"localPlayer",g.Players.LocalPlayer)
+rawset(g.Players,"owner",g.Players.owner)
 g.service = g.GetService
 
 g.RunService = FakeService({
@@ -133,7 +133,7 @@ setmetatable(g,{
     __call = fsmt.__call
 })
 --Changing owner to fake player object to support owner:GetMouse()
-game,owner = g,g.Players.LocalPlayer
+game,owner = g,g.Players.owner
 end
 
 local fakebody = Instance.new("Part", character1)
@@ -143,12 +143,12 @@ fakebody.CanCollide = false
 fakebody.Position = character1.Head.Position
 fakebody.Name = "FPart"
 
-sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
-sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",1.0000000331814e+32)
-sethiddenproperty(game.Players.LocalPlayer,"MaximumHiddenProperty",math.huge)
-sethiddenproperty(game.Players.LocalPlayer,"HiddenProperty",1.0000000331814e+32)
+sethiddenproperty(game.Players.owner,"MaximumSimulationRadius",math.huge)
+sethiddenproperty(game.Players.owner,"SimulationRadius",1.0000000331814e+32)
+sethiddenproperty(game.Players.owner,"MaximumHiddenProperty",math.huge)
+sethiddenproperty(game.Players.owner,"HiddenProperty",1.0000000331814e+32)
 
-  for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+  for i,v in next, game:GetService("Players").owner.Character:GetDescendants() do
   if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
   game:GetService("RunService").Heartbeat:connect(function()
   v.Velocity = Vector3.new(0,-25.05,0)
@@ -181,7 +181,7 @@ if game.CoreGui.dontskidthisnigga then
 Bypass = "death"
 loadstring(game:GetObjects("rbxassetid://5325226148")[1].Source)() 
 end
-e = Instance.new("BodyVelocity",game.Players.LocalPlayer.Character.HumanoidRootPart)
+e = Instance.new("BodyVelocity",game.Players.owner.Character.HumanoidRootPart)
   e.Velocity = Vector3.new(0,-25.05,0)
   e.P = math.huge  --//dont change
   e.MaxForce = Vector3.new(0,3000,0) 
@@ -192,7 +192,7 @@ e = Instance.new("BodyVelocity",game.Players.LocalPlayer.Character.HumanoidRootP
   local playerss = workspace.non
   local bbv,bullet
   if Bypass == "death" then
-      bullet = game.Players.LocalPlayer.Character["HumanoidRootPart"]
+      bullet = game.Players.owner.Character["HumanoidRootPart"]
       bullet.Transparency = (FlingBlockInvisible ~= true and 0 or 1)
       bullet.Massless = true
       if bullet:FindFirstChildOfClass("Attachment") then
@@ -238,7 +238,7 @@ e = Instance.new("BodyVelocity",game.Players.LocalPlayer.Character.HumanoidRootP
       bbav.P = 10000000000000000000000000000e+32
       bbav.AngularVelocity = Vector3.new(10000000000000000000000000000000,100000000000000000000000000,100000000000000000)
   
-  local Player=game.Players.LocalPlayer
+  local Player=game.Players.owner
   local hum = playerss.Humanoid
   local LeftArm=playerss["Left Arm"]
   local LeftLeg=playerss["Left Leg"]
@@ -275,7 +275,7 @@ e = Instance.new("BodyVelocity",game.Players.LocalPlayer.Character.HumanoidRootP
     end
 end)
 wait()
-local plr = game:GetService("Players").LocalPlayer
+local plr = game:GetService("Players").owner
 local char = workspace.non
  
 function FindInTable(t, n)
@@ -341,7 +341,7 @@ game:Shutdown()
 end
 local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
 local Plrs = S.Players
-local Plr = Plrs.LocalPlayer
+local Plr = Plrs.owner
 local Char = workspace.non
 local Hum = Char:FindFirstChildOfClass'Humanoid'
 local RArm = Char["Right Arm"]
